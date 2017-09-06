@@ -9,7 +9,10 @@
 #
 # Current problem: Cannot pass list of URLs through to search
 # Have tried:
+# https://www.crummy.com/software/BeautifulSoup/bs4/doc/
 # https://stackoverflow.com/questions/35732464/looping-through-a-list-of-urls-for-web-scraping-with-beautifulsoup
+# https://stackoverflow.com/questions/14512386/scraping-text-using-url-from-list-beautifulsoup4
+# https://stackoverflow.com/questions/5331266/python-easiest-way-to-scrape-text-from-list-of-urls-using-beautifulsoup
 
 #
 # PART 1 - IMPORT URLs INTO ARRAY USING NUMPY & PANDAS
@@ -22,6 +25,10 @@ csv_file = urlopen(url_stations)	# Store contents of url in variable 'csv_file'
 file_output = csv.reader(codecs.iterdecode(csv_file, 'utf-8'))	# Decode csv_file contents into utf-8 and store as variable 'file_output'
 station_info = list(file_output) # Push file_output into list 'station_info'
 station_alphas = [item[1] for item in station_info] # Keep 2nd item (i.e. item 1) of each sub-list and store as variable 'station_alphas'
+url_head = 'http://www.nationalrail.co.uk/stations_destinations/'
+url_tail = '.aspx'
+station_addresses = [url_head + x + url_tail for x in station_alphas]
+
 #
 # PART 2 - PARSE HTML WITH BEAUTIFULSOUP USING LIST OF URLs
 # from urllib.request import urlopen
