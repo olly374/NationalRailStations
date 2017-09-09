@@ -33,7 +33,7 @@ station_addresses = [url_head + x + url_tail for x in station_alphas]
 # PART 2 - PARSE HTML WITH BEAUTIFULSOUP USING LIST OF URLs
 # from urllib.request import urlopen
 from bs4 import BeautifulSoup
-# url_station = ['http://www.nationalrail.co.uk/stations/LEW/details.html', 'http://www.nationalrail.co.uk/stations/LBG/details.html']  # specify the URL(/s)
+# url_station = ['http://www.nationalrail.co.uk/stations/WRY/details.html', 'http://www.nationalrail.co.uk/stations/LBG/details.html']  # specify the URL(/s)
 url_station = [station_alphas[0:0]]  # specify number of items on list to use
 # url_station = [url_string]  # specify the string of items to use
 station_info = []
